@@ -1,0 +1,20 @@
+Photography credits
+===================
+
+All images are used under the Unsplash License, which permits free commercial use
+without attribution. Credits are recorded here as good practice.
+https://unsplash.com/license
+
+Product photography credits are in pool/CREDITS.txt.
+
+Hero, editorial and category images (this folder):
+
+hero-patio.jpg              https://unsplash.com/photos/FbA6KxAuHhM
+editorial-workshop.jpg      https://unsplash.com/photos/q13Zq1Jufks
+editorial-team.jpg          https://unsplash.com/photos/kwJfZxunoHc
+cat-outdoor-furniture.jpg   https://unsplash.com/photos/9U9Kf6191X0
+cat-planters.jpg            https://unsplash.com/photos/EdikwYdJgoM
+cat-indoor-plants.jpg       https://unsplash.com/photos/NwBx723XaHw
+cat-tools.jpg               https://unsplash.com/photos/BduDcrySLKM
+cat-lighting.jpg            https://unsplash.com/photos/OlaR7baToPs
+cat-decor.jpg               https://unsplash.com/photos/aY4cDTBrpmk

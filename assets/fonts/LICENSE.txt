@@ -1,0 +1,8 @@
+Fraunces - Copyright (c) The Fraunces Project Authors.
+Nunito Sans - Copyright (c) Vernon Adams, Jacques Le Bailly.
+
+Both families are licensed under the SIL Open Font License, Version 1.1.
+https://openfontlicense.org
+
+These fonts are free to use, embed and redistribute, including for
+commercial purposes. They may not be sold on their own.

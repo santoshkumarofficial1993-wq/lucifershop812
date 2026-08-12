@@ -1,0 +1,39 @@
+# =============================================================================
+# Fernway — allow U.S. visitors only (server-side backup to the Cloudflare rule)
+# -----------------------------------------------------------------------------
+# HOW TO USE
+#   Copy the block below into the .htaccess file in your document root
+#   (public_html/.htaccess) on the cPanel server. If .htaccess does not exist,
+#   create it. Keep a backup of the original first.
+#
+# REQUIREMENTS
+#   * Traffic must arrive THROUGH Cloudflare (DNS record proxied / orange cloud).
+#   * Cloudflare must send the country header: Cloudflare dashboard →
+#     Network → IP Geolocation → On (it usually is by default).
+#
+# WHAT IT DOES
+#   Apache reads Cloudflare's CF-IPCountry header. The request is allowed only
+#   when that header equals "US". Everything else — including a request that
+#   reaches the server WITHOUT the header (i.e. someone hitting the origin IP
+#   directly, bypassing Cloudflare) — is denied with 403.
+#
+# NOTE
+#   This is a secondary safeguard. The primary block should be the Cloudflare
+#   WAF custom rule (see deploy/US-ONLY-GEO-BLOCK.md, step 1).
+# =============================================================================
+
+# ---- Apache 2.4 (most cPanel servers) ---------------------------------------
+<IfModule mod_authz_core.c>
+  SetEnvIf CF-IPCountry "^US$" ALLOW_US
+  <RequireAll>
+    Require env ALLOW_US
+  </RequireAll>
+</IfModule>
+
+# ---- Apache 2.2 fallback (only if the block above is unsupported) ------------
+# <IfModule !mod_authz_core.c>
+#   SetEnvIf CF-IPCountry "^US$" ALLOW_US
+#   Order deny,allow
+#   Deny from all
+#   Allow from env=ALLOW_US
+# </IfModule>
